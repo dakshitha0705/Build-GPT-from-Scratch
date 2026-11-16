@@ -15,3 +15,8 @@ One entry per lesson: what I built, the key numbers, and what I learned.
 - Built `05_causal_mask.ipynb`: masked the attention scores with `torch.tril` → `-inf` before softmax.
 - Numbers: before/after matrices identical to the course (max diff 0.0); all future weights 0 = `True`; rows still sum to 1; row 0 = `[1.0, 0.0, …, 0.0]`.
 - Learned: the mask must go before the softmax so the allowed weights re-normalise — that one line is what makes a GPT a decoder.
+
+## 2026-11-16 — Lesson 6: The transformer block
+- Built `06_transformer_block.ipynb`: `Head`, `MultiHeadAttention`, `FeedForward`, `Block` (pre-norm + residuals).
+- Numbers: input `(4, 8, 32)` → output `(4, 8, 32)`; **12608** parameters (matches course). By hand: heads 3072, proj 1056, feed-forward 8352, layernorms 128.
+- Learned: a block is "communicate (attention), then think (feed-forward)", each added onto x — same shape in and out, so blocks stack.

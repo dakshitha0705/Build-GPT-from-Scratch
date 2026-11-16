@@ -15,7 +15,7 @@ Drill: **Building GPT from Scratch**
 - [x] 3 — Tokens to vectors
 - [x] 4 — Self-attention
 - [x] 5 — Look back, never forward (causal mask)
-- [ ] 6 — The transformer block
+- [x] 6 — The transformer block
 - [ ] 7 — Assemble & train the GPT
 - [ ] 8 — Make it talk (decoding)
 - [ ] 9 — Ship your mini-GPT
