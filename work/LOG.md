@@ -32,3 +32,10 @@ One entry per lesson: what I built, the key numbers, and what I learned.
 - Numbers (distinct chars / real-word share): T=0.5 → 20 / 59%, T=1.4 → 42 / 14%, top-k 10 → 27 / 35%, top-p 0.9 → 36 / 40%.
   Samples share 2–54 starting characters with the course, then drift (tiny weight differences from L7), and often re-sync later.
 - Learned: the trained model is fixed — decoding settings alone move it from repetitive (low T) to gibberish (high T); top-k/top-p cut the nonsense tail.
+
+## 2026-11-16 — Lesson 9: Ship your mini-GPT
+- Built `09_ship_mini_gpt.ipynb` and `mini_gpt.py`: `MiniGPT` loads `gpt.pt` and has one method, `complete(prompt)` (temperature 0.8, top-k 20).
+- Numbers: `ROMEO:` + 200 chars = 206; module has 159937 params, weights identical to the notebook class, same seed → same text (`True`). Runs from any folder (`python work/mini_gpt.py`).
+- Sample shares 8 chars with the course, then drifts and re-syncs (`dove she ill,`) — same tiny L7 weight differences.
+- Portfolio project: not done here — I'll build it separately.
+- Learned: a whole GPT ships as ~100 lines of code + a 0.7 MB weights file behind a prompt-in/text-out interface — the same shape as any LLM API.
