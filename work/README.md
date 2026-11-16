@@ -13,7 +13,7 @@ Drill: **Building GPT from Scratch**
 - [x] 1 — What a language model is
 - [x] 2 — Text to tokens
 - [x] 3 — Tokens to vectors
-- [ ] 4 — Self-attention
+- [x] 4 — Self-attention
 - [ ] 5 — Look back, never forward (causal mask)
 - [ ] 6 — The transformer block
 - [ ] 7 — Assemble & train the GPT
