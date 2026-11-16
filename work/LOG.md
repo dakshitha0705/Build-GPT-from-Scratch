@@ -26,3 +26,9 @@ One entry per lesson: what I built, the key numbers, and what I learned.
 - Numbers: **159937** parameters and untrained loss 4.450 (both exact); val loss 4.409 → 2.177 at step 400 (course 2.177). Max gap vs course curve 0.002 (torch 2.15.0); sample matches the course for 27 chars then drifts. Training took ~6 s on CPU.
 - Noted: the course's untrained-loss check draws `xb` and `yb` from two different random indices, so targets don't line up — kept as-is.
 - Learned: a GPT is just the blocks stacked between an embedding and a vocab projection — 400 steps already teach it line breaks, capitals and word shapes.
+
+## 2026-11-16 — Lesson 8: Make it talk (decoding)
+- Built `08_make_it_talk.ipynb`: loaded `gpt.pt` and wrote one `sample()` with temperature, top-k and top-p (nucleus).
+- Numbers (distinct chars / real-word share): T=0.5 → 20 / 59%, T=1.4 → 42 / 14%, top-k 10 → 27 / 35%, top-p 0.9 → 36 / 40%.
+  Samples share 2–54 starting characters with the course, then drift (tiny weight differences from L7), and often re-sync later.
+- Learned: the trained model is fixed — decoding settings alone move it from repetitive (low T) to gibberish (high T); top-k/top-p cut the nonsense tail.

@@ -17,5 +17,5 @@ Drill: **Building GPT from Scratch**
 - [x] 5 — Look back, never forward (causal mask)
 - [x] 6 — The transformer block
 - [x] 7 — Assemble & train the GPT
-- [ ] 8 — Make it talk (decoding)
+- [x] 8 — Make it talk (decoding)
 - [ ] 9 — Ship your mini-GPT
