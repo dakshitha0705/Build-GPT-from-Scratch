@@ -25,4 +25,8 @@ __pycache__/
 .venv/
 .DS_Store
 
+# Building GPT from Scratch drill — course text and generated data stay local
+course/
 work/shakespeare.txt
+work/gpt.pt
+*.pt
