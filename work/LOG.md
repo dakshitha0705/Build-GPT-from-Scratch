@@ -20,3 +20,9 @@ One entry per lesson: what I built, the key numbers, and what I learned.
 - Built `06_transformer_block.ipynb`: `Head`, `MultiHeadAttention`, `FeedForward`, `Block` (pre-norm + residuals).
 - Numbers: input `(4, 8, 32)` → output `(4, 8, 32)`; **12608** parameters (matches course). By hand: heads 3072, proj 1056, feed-forward 8352, layernorms 128.
 - Learned: a block is "communicate (attention), then think (feed-forward)", each added onto x — same shape in and out, so blocks stack.
+
+## 2026-11-16 — Lesson 7: Assemble & train the GPT
+- Built `07_assemble_and_train.ipynb`: full `GPT` (embeddings → 3 blocks → ln_f → lm_head), 400 AdamW steps, saved `gpt.pt` (not committed).
+- Numbers: **159937** parameters and untrained loss 4.450 (both exact); val loss 4.409 → 2.177 at step 400 (course 2.177). Max gap vs course curve 0.002 (torch 2.15.0); sample matches the course for 27 chars then drifts. Training took ~6 s on CPU.
+- Noted: the course's untrained-loss check draws `xb` and `yb` from two different random indices, so targets don't line up — kept as-is.
+- Learned: a GPT is just the blocks stacked between an embedding and a vocab projection — 400 steps already teach it line breaks, capitals and word shapes.
